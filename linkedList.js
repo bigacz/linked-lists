@@ -40,6 +40,23 @@ class LinkedList {
     return size;
   }
 
+  getHead() {
+    return this.head;
+  }
+
+  getTail() {
+    let currentNode = this.head;
+    if (currentNode === null) {
+      return null;
+    }
+
+    while (currentNode.next !== null) {
+      currentNode = currentNode.next;
+    }
+
+    return currentNode;
+  }
+
   toString() {
     let nodeString = '';
     let currentNode = this.head;

@@ -7,5 +7,6 @@ test.append('third');
 test.append('fourth');
 test.prepend('first');
 test.prepend('zero');
-console.log(test.getSize());
+
 console.log(test.toString());
+console.log(test.getTail());

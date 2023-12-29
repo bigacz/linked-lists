@@ -57,6 +57,22 @@ class LinkedList {
     return currentNode;
   }
 
+  getAt(indexSearched) {
+    let currentNode = this.head;
+    if (currentNode === null) {
+      return undefined;
+    }
+
+    let currentIndex = 0;
+    while (currentNode !== null) {
+      if (currentIndex === indexSearched) {
+        return currentNode;
+      }
+      currentIndex++;
+      currentNode = currentNode.next;
+    }
+  }
+
   toString() {
     let nodeString = '';
     let currentNode = this.head;

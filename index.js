@@ -9,4 +9,5 @@ test.prepend('first');
 test.prepend('zero');
 
 console.log(test.toString());
-console.log(test.getTail());
+
+console.log(test.getAt(3));

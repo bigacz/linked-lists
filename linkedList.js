@@ -171,11 +171,8 @@ class LinkedList {
 
     let listSize = this.getSize();
 
-    if (removeIndex === listSize) {
-      this.pop();
-      return;
-    }
-    if (removeIndex > listSize || removeIndex < 0) {
+    if (removeIndex > listSize - 1 || removeIndex < 0) {
+      console.log('elo');
       throw new Error('Wrong index');
     }
 

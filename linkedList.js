@@ -117,6 +117,20 @@ class LinkedList {
     }
   }
 
+  toString() {
+    let nodeString = '';
+    let currentNode = this.head;
+    while (currentNode !== null) {
+      nodeString += `( ${currentNode.value} ) -> `;
+
+      currentNode = currentNode.next;
+    }
+
+    nodeString += null;
+
+    return nodeString;
+  }
+
   insertAt(value, insertIndex) {
     if (insertIndex === 0) {
       this.prepend(value);
@@ -178,20 +192,6 @@ class LinkedList {
       previousNode = currentNode;
       currentNode = currentNode.next;
     }
-  }
-
-  toString() {
-    let nodeString = '';
-    let currentNode = this.head;
-    while (currentNode !== null) {
-      nodeString += `( ${currentNode.value} ) -> `;
-
-      currentNode = currentNode.next;
-    }
-
-    nodeString += null;
-
-    return nodeString;
   }
 }
 

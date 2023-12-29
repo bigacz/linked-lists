@@ -125,7 +125,6 @@ class LinkedList {
 
     let listSize = this.getSize();
 
-    console.log(listSize);
     if (insertIndex === listSize) {
       this.append(value);
       return;
@@ -142,8 +141,37 @@ class LinkedList {
       if (index === insertIndex) {
         const node = new Node(value, currentNode);
         previousNode.next = node;
+      }
 
-        console.log(currentNode);
+      index += 1;
+      previousNode = currentNode;
+      currentNode = currentNode.next;
+    }
+  }
+
+  removeAt(removeIndex) {
+    if (removeIndex === 0) {
+      this.head = this.head.next;
+      return;
+    }
+
+    let listSize = this.getSize();
+
+    if (removeIndex === listSize) {
+      this.pop();
+      return;
+    }
+    if (removeIndex > listSize || removeIndex < 0) {
+      throw new Error('Wrong index');
+    }
+
+    let previousNode;
+
+    let index = 0;
+    let currentNode = this.head;
+    while (currentNode !== null) {
+      if (index === removeIndex) {
+        previousNode.next = currentNode.next;
       }
 
       index += 1;

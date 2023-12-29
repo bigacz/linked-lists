@@ -5,13 +5,13 @@ class LinkedList {
 
   append(value) {
     const node = new Node(value);
+    let currentNode = this.head;
 
-    if (this.head === null) {
+    if (currentNode === null) {
       this.head = node;
       return;
     }
 
-    let currentNode = this.head;
     while (currentNode.next !== null) {
       currentNode = currentNode.next;
     }
@@ -28,14 +28,11 @@ class LinkedList {
 
   getSize() {
     let currentNode = this.head;
-    if (currentNode === null) {
-      return 0;
-    }
 
-    let size = 1;
-    while (currentNode.next !== null) {
+    let size = 0;
+    while (currentNode !== null) {
       currentNode = currentNode.next;
-      size++;
+      size += 1;
     }
     return size;
   }
@@ -69,7 +66,7 @@ class LinkedList {
         return currentNode;
       }
 
-      currentIndex++;
+      currentIndex += 1;
       currentNode = currentNode.next;
     }
   }
@@ -115,9 +112,18 @@ class LinkedList {
         return index;
       }
 
-      index++;
+      index += 1;
       currentNode = currentNode.next;
     }
+  }
+
+  insertAt(value, searchedIndex) {
+    let previousNode;
+    let nextNode;
+
+    let currentNode = this.head;
+    let currentIndex = 0;
+    while (currentNode !== null) {}
   }
 
   toString() {
@@ -143,5 +149,3 @@ class Node {
 }
 
 export default LinkedList;
-
-// FIX LOOPS, TDD //

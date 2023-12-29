@@ -9,5 +9,7 @@ test.prepend('first');
 test.prepend('zero');
 
 console.log(test.toString());
+console.log(test.getSize());
+console.log(test.getTail());
 
-console.log(test.find('fourth'));
+const hello = 'SHIT';

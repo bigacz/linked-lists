@@ -8,5 +8,5 @@
 `contains(value)` returns true, if list contains given falue, and false, if value wasn't found
 `find(value)` returns index of first node with given value
 `toString()` returns string with visual representation of list
-`insertAt(value, index)` adds node with given value at given index
-`removeAt(index)` removes node at given index
+`insertAt(value, index)` adds node with given value at given index, index below 0 and higher than length will throw an error
+`removeAt(index)` removes node at given index, index below 0 and higher than length - 1 will throw an error

@@ -10,4 +10,4 @@ test.prepend('zero');
 
 console.log(test.toString());
 
-console.log(test.getAt(3));
+console.log(test.getAt(0));

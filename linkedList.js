@@ -73,6 +73,25 @@ class LinkedList {
     }
   }
 
+  pop() {
+    let previousNode;
+    let currentNode = this.head;
+    if (currentNode === null) {
+      return;
+    }
+    if (currentNode.next === null) {
+      this.head = null;
+      return;
+    }
+
+    while (currentNode.next !== null) {
+      previousNode = currentNode;
+      currentNode = currentNode.next;
+    }
+
+    previousNode.next = null;
+  }
+
   toString() {
     let nodeString = '';
     let currentNode = this.head;
@@ -96,3 +115,5 @@ class Node {
 }
 
 export default LinkedList;
+
+// FIX LOOPS, TDD //

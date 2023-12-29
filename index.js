@@ -10,4 +10,5 @@ test.prepend('zero');
 
 console.log(test.toString());
 
-console.log(test.getAt(0));
+console.log(test.getAt(9));
+console.log(test.contains('fourth'));

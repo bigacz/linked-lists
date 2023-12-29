@@ -68,6 +68,7 @@ class LinkedList {
       if (currentIndex === indexSearched) {
         return currentNode;
       }
+
       currentIndex++;
       currentNode = currentNode.next;
     }
@@ -90,6 +91,19 @@ class LinkedList {
     }
 
     previousNode.next = null;
+  }
+
+  contains(searched) {
+    let currentNode = this.head;
+
+    while (currentNode !== null) {
+      if (currentNode.value === searched) {
+        return true;
+      }
+      currentNode = currentNode.next;
+    }
+
+    return false;
   }
 
   toString() {

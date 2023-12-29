@@ -117,13 +117,39 @@ class LinkedList {
     }
   }
 
-  insertAt(value, searchedIndex) {
-    let previousNode;
-    let nextNode;
+  insertAt(value, insertIndex) {
+    if (insertIndex === 0) {
+      this.prepend(value);
+      return;
+    }
 
+    let listSize = this.getSize();
+
+    console.log(listSize);
+    if (insertIndex === listSize) {
+      this.append(value);
+      return;
+    }
+    if (insertIndex > listSize || insertIndex < 0) {
+      throw new Error('Wrong index');
+    }
+
+    let previousNode;
+
+    let index = 0;
     let currentNode = this.head;
-    let currentIndex = 0;
-    while (currentNode !== null) {}
+    while (currentNode !== null) {
+      if (index === insertIndex) {
+        const node = new Node(value, currentNode);
+        previousNode.next = node;
+
+        console.log(currentNode);
+      }
+
+      index += 1;
+      previousNode = currentNode;
+      currentNode = currentNode.next;
+    }
   }
 
   toString() {
